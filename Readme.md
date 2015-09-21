@@ -64,13 +64,13 @@ read the code (comment, line breaks, verbose symbol names, etc.).
 - Uglify's top-level API sucks, no support for streams, only files or blobs (aka large strings)
 - Will lose source maps. Can be persuaded, but that's not trivial ([see here for a similar scenario](http://tarantsov.com/WorkflowThu/source-maps-with-coffeescript-and-uglify-js/)),
   we'll skip it for now and use `gulp` later to fix it.
-- CLI: pipe it n' smoke it (posix-magic): `browserify www/main.js | uglify > www/bundle.min.js`
+- CLI: pipe it n' smoke it: `browserify www/main.js | uglify > www/bundle.min.js`
 
 ### Sourcemap Considerations
 
 The missing sourcemap in the minified version is probably not as big a deal as it first seems:
 
 - Would need to pass the `debug` flag into browserify to have it in the first place.
-- In a production env we would not want to load the source map anyway, minified or not
+- In a production env we would not want to load the source map, minified or not
 - As a result we'd have two different builds anyway: debug (not minified, embedded source map) vs.
   production (minified, no source map)
