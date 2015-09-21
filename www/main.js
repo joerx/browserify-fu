@@ -18,4 +18,4 @@ class Greeter {
     if (e) e.preventDefault();
     console.log(this.message);
   }
-}
+};

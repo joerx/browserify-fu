@@ -29,6 +29,7 @@ node_modules
 
 # Frontend build output
 www/bundle.js
+www/bundle.min.js
 
 # Sublime workspace (project will be versioned)
 *.sublime-workspace
