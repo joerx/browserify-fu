@@ -26,3 +26,8 @@ stuff like Coffeescript sources to be translated to JS. We use ES2015 to ES5 for
 - Instructions for browserify via https://babeljs.io/docs/setup/#browserify
 - Simply hook `babelify` into the transformation pipe and enjoy ES2015 awesomeness
 
+## v0.4 Build Systems!
+
+Running build by hand from CLI is tedious sometimes. Integrating with your preferred editor could
+make life a lot easier. For sublime-text we can use a project specific build system. See the
+`*.sublime-project` file for details.
