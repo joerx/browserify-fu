@@ -1,4 +1,4 @@
-var uniq = require('uniq');
-var data = [1, 2, 2, 2, 4, 5, 5, 6];
+var $ = require('jquery');
 
-console.log(uniq(data));
+console.log('We\'re good to go!');
+$('body').append('<h1>Hello World!</h1>');
