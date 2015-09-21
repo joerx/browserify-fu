@@ -39,3 +39,12 @@ something changes? Meet `watchify`.
 
 - Has a CLI as well, `watchify $input -o $output`, etc.
 - For complex option it can integrate with browserify API, see `./watch.js`
+
+## v0.6 Source Maps
+
+Bundled sources are hard to debug since the original files names and line numbers are lost.
+Browserify can include a source map inside the bundled file to make debugging easier.
+
+- Source map is appended as base64-encoded data url to the end of `bundle.js`
+- Obviously the resulting bundle will be larger: `bundle.js` will 669k vs. 244k w/o source map
+- See `build.js` for details. (`DEBUG=1 node build.js` to generate bundle w/ source maps)
