@@ -8,8 +8,12 @@
   "build_systems":
   [
     {
-      "name": "NPM build",
+      "name": "npm build",
       "cmd": ["npm", "run", "build"]
+    },
+    {
+      "name": "npm watch",
+      "cmd": ["npm", "run", "watch"]
     }
   ]
 }

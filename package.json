@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js"
+    "build": "node build.js",
+    "watch": "node watch.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babelify": "^6.3.0",
     "browserify": "^11.1.0",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "watchify": "^3.4.0"
   }
 }
