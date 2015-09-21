@@ -1,13 +1,18 @@
 # Browserify Demo Project
 
+## Setup
+
+Install browserify via `npm -g install browserify` or export `PATH=./node_modules/.bin/:$PATH` to
+use binaries installed locally via `npm install`.
+
 ## v0.1 Via CLI
 
 Allows to use Node.js style `require()` in the browser by bundling all JS files in into a single
 `bundle.js`.
 
 - Install node packages via `npm install`
-- Use `browserify` CLI to generate a single output file called `bundle.js` (see `build.sh`)
 - Include `bundle.js` in your html files
+- CLI: `browserify main.js -o bundle.js` to generate `bundle.js` from `main.js` (see `build.sh`)
 
 ## v0.2 Via API
 
@@ -24,7 +29,8 @@ Browserify allows additional transforms source files will pass before being brow
 stuff like Coffeescript sources to be translated to JS. We use ES2015 to ES5 for a sample.
 
 - Instructions for browserify via https://babeljs.io/docs/setup/#browserify
-- Simply hook `babelify` into the transformation pipe and enjoy ES2015 awesomeness
+- Install `babelify` via npm, hook it into the transformation pipe and enjoy ES2015 awesomeness
+- CLI: use `-t` flag to add transforms: `browserify main.js -t babelify -o bundle.js`
 
 ## v0.4 Build Systems
 
@@ -37,8 +43,8 @@ make life a lot easier. For sublime-text we can use a project specific build sys
 Having a shortcut is cool, but still one keypress too much. How about automatic build whenever
 something changes? Meet `watchify`.
 
-- Has a CLI as well, `watchify $input -o $output`, etc.
-- For complex option it can integrate with browserify API, see `./watch.js`
+- Can integrate with browserify API, but not exactly trivial (see `./watch.js`)
+- CLI: use like babelify: `watchify $input -o $output`, etc. (won't output anything, but works)
 
 ## v0.6 Source Maps
 
@@ -46,5 +52,6 @@ Bundled sources are hard to debug since the original files names and line number
 Browserify can include a source map inside the bundled file to make debugging easier.
 
 - Source map is appended as base64-encoded data url to the end of `bundle.js`
-- Obviously the resulting bundle will be larger: `bundle.js` will 669k vs. 244k w/o source map
+- Obviously the resulting bundle will be larger: `bundle.js` has 669k vs. 244k w/o source map
 - See `build.js` for details. (`DEBUG=1 node build.js` to generate bundle w/ source maps)
+- CLI: use `--debug` flag for `browserify`
