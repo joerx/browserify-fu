@@ -1,4 +1,21 @@
-var $ = require('jquery');
+import $ from 'jquery';
 
 console.log('We\'re good to go!');
-$('body').append('<h1>Hello World!</h1>');
+$('body').prepend('<p>May the source be with you!</p>');
+
+var name = 'Yoda';
+
+// admittedly this is a rather stupid example for ES6 syntax
+$('#button').click(e => new Greeter(`Huh, clicked at ${name}'s button you have!`).greet(e));
+
+class Greeter {
+
+  constructor(message) {
+    this.message = message;
+  }
+
+  greet(e) {
+    if (e) e.preventDefault();
+    console.log(this.message);
+  }
+}
