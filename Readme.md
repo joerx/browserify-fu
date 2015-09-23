@@ -77,11 +77,11 @@ The missing sourcemap in the minified version is probably not as big a deal as i
 
 ## v0.8 Gulp
 
-Tools like Gulp or Grunt and popular choices for build systems in the JS world. A custom script
-could do the job in a simple project, but build system can add structure and useful tools for more
+Tools like Gulp or Grunt are popular choices for build systems in the JS world. A custom script
+could do the job in a simple project, but a build system can add structure and useful tools for more
 complex installments.
 
-- Gulp works on streams wrapped into [vinyl objects or so](see https://medium.com/@contrahacks/gulp-3828e8126466)
+- Gulp works on streams wrapped into [vinyl objects or so](https://medium.com/@contrahacks/gulp-3828e8126466)
 - Need some extra haggling with vinyl, buffers, etc. to get things to work, see `Gulpfile.js`
 - As a bonus, we get source maps all the way to the original files, even for minified code
-- CLI: `gulp build`, watch is not implemented here [but possible](https://gist.github.com/danharper/3ca2273125f500429945)
+- CLI: `gulp build`, watch is not implemented here [but doable](https://gist.github.com/danharper/3ca2273125f500429945)
