@@ -1,14 +1,17 @@
 {
-  "name": "browserify-demo",
-  "version": "1.0.0",
-  "description": "",
+  "name": "browserify-fu",
+  "version": "0.8.0",
+  "description": "Browserify/babelify demo project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js",
-    "watch": "node watch.js"
+    "build": "./node_modules/.bin/gulp build",
   },
-  "author": "",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/joerx/browserify-fu.git"
+  },
+  "author": "Jörg Henning \"henning.joerg@gmail.com\"",
   "license": "ISC",
   "devDependencies": {
     "babelify": "^6.3.0",
