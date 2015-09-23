@@ -74,3 +74,9 @@ The missing sourcemap in the minified version is probably not as big a deal as i
 - In a production env we would not want to load the source map, minified or not
 - As a result we'd have two different builds anyway: debug (not minified, embedded source map) vs.
   production (minified, no source map)
+
+## v0.8 Gulp
+
+Tools like Gulp or Grunt and popular choices for build systems in the JS world. A custom script
+could do the job in a simple project, but build system can add structure and useful tools for more
+complex installments.

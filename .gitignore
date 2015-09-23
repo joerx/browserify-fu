@@ -28,8 +28,7 @@ build/Release
 node_modules
 
 # Frontend build output
-www/bundle.js
-www/bundle.min.js
+www/dist/
 
 # Sublime workspace (project will be versioned)
 *.sublime-workspace
