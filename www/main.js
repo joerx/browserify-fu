@@ -1,7 +1,10 @@
 import $ from 'jquery';
+import other from './other';
 
 console.log('We\'re good to go!');
 $('body').prepend('<p>May the source be with you!</p>');
+
+other();
 
 var name = 'Yogurt';
 

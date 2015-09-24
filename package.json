@@ -5,17 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/gulp build",
+    "build": "./node_modules/.bin/gulp build"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/joerx/browserify-fu.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joerx/browserify-fu.git"
   },
   "author": "Jörg Henning \"henning.joerg@gmail.com\"",
   "license": "ISC",
   "devDependencies": {
     "babelify": "^6.3.0",
     "browserify": "^11.1.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-uglify": "^0.9.2",
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.5.2",

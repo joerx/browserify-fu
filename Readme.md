@@ -75,7 +75,9 @@ The missing sourcemap in the minified version is probably not as big a deal as i
 - As a result we'd have two different builds anyway: debug (not minified, embedded source map) vs.
   production (minified, no source map)
 
-## v0.8 Gulp
+## Build Systems
+
+### v0.8 Gulp
 
 Tools like Gulp or Grunt are popular choices for build systems in the JS world. A custom script
 could do the job in a simple project, but a build system can add structure and useful tools for more
@@ -85,3 +87,29 @@ complex installments.
 - Need some extra haggling with vinyl, buffers, etc. to get things to work, see `Gulpfile.js`
 - As a bonus, we get source maps all the way to the original files, even for minified code
 - CLI: `gulp build`, watch is not implemented here [but doable](https://gist.github.com/danharper/3ca2273125f500429945)
+
+### v0.9 Grunt
+
+Grunt is an alternative to Gulp. It doesn't think in pipes and streams, offering a more
+conventional structure of tasks and configuration. It's less performant (and less elegant) when
+working with file transformation, but more flexible in what can be done with it.
+
+- Grunt thinks in tasks performed on actual files, not in virtual files and streams
+- Mostly wraps around other tools to perform common project tasks (compile, test, deploy, ...)
+- See `Gruntfile.js`. Wrote my own `browserify` task (`bundle`) for demo
+
+### Grunt vs Gulp
+
+Good overview [on the differences is here](https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4),
+Personally I'd approach the decision differently though. As with any good answer on a complex
+problem, it starts with 'depends':
+
+- when Comparing `Gulpfile.js` with `Gruntfile.js`, Gulp is more to the point, less verbose and
+  more 'natural' dealing with the file transformation
+- However, Grunt can cover more scenarios that can't be easily expressed as stream transformations
+  (e.g. running tests, deploying code, building docker images)
+- My personal rule of thumb:
+  - frontend only, with a lot of 'xyz to js', 'xyss to css', 'abc-ify', etc. - Gulp shines
+  - backend usually 'test', 'lint', 'style-check', 'deploy', etc. - Grunt makes more sense
+  - if in doubt: Grunt, might be less perfect for some tasks, but still can likely cover everything
+- Alternatively use Grunt wrapped around Gulp; comes with additional overhead though
