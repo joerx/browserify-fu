@@ -1,6 +1,6 @@
 {
   "name": "browserify-fu",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Browserify/babelify demo project",
   "main": "index.js",
   "scripts": {
